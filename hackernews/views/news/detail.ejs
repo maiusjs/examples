@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Detail</title>
+</head>
+<body>
+    <%- include('layout/layout.ejs') %>
+      <div class="item-view view v-transition">
+        <!-- item detail -->
+        <%- include('item', {index: index, item: item}) %>
+        <!-- comments -->
+        <% if (comments.length > 0) {%>
+          <ul class="comments"
+            <% for (index in comments) {%>
+              <li>
+                <div class="comhead">
+                  <a class="toggle">[-]</a>
+                  <a href="/news/user/<%=comments[index].by%>"><%=comments[index].by %></a>
+                  <%= helpers.relativeTime(comments[index].time) %>
+                </div>
+                <div class="comment-content">
+                  <%- comments[index].text %>
+                </div>
+              </li>
+            <% } %>
+          </ul>
+        <%} else {%>
+          <p>No comments yet.</p>
+        <% } %>
+      </div>
+</body>
+</html>
