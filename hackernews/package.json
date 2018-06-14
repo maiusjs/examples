@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.22.2"
+    "moment": "^2.22.2",
+    "maius": "^0.0.1"
   }
 }
