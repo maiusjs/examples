@@ -1,0 +1,16 @@
+<div class="item">
+    <span class="index"><%=index%>.</span>
+    <p>
+      <a class="title" target="_blank" href="<%= item.url %>"><%= item.title %></a>
+      <span class="domain">(<%= helpers.domain(item.url)%>)</span>
+    </p>
+    <p class="subtext">
+      <span>
+        <%= item.score %> points by <a href="/news/user/<%= item.by %>"><%= item.by %></a>
+      </span>
+      <%= helpers.relativeTime(item.time) %>
+      <span class="comments-link">
+        | <a href="/news/item/<%= item.id %>"><%=item.descendants %> comments</a>
+      </span>
+    </p>
+  </div>

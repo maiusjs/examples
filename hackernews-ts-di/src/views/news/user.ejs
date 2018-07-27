@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>User</title>
+</head>
+<body>
+    <%- include('layout/layout.ejs') %>
+  <div class="user-view view v-transition">
+      <%= user.title %>
+      Profile: <% user.id %> | maius - HackerNews
+    <ul>
+      <li><span class="label">user:</span> <%= user.id %></li>
+      <li><span class="label">created:</span> <%= helpers.relativeTime(user.created)  %></li>
+      <li><span class="label">karma:</span> <%= user.karma %></li>
+      <li>
+        <span class="label">about:</span>
+        <div class="about">
+          <%- user.about %>
+        </div>
+      </li>
+    </ul>
+    <p class="links">
+      <a href="https://news.ycombinator.com/submitted?id=<%= user.id %>">submissions</a><br>
+      <a href="https://news.ycombinator.com/threads?id=<%= user.id %>">comments</a>
+    </p>
+  </div>
+</body>
+</html>
+
